@@ -19,14 +19,23 @@ namespace PhoneBook.Controllers
             _logger = logger;
         }
 
-        
-        public void ShowName()
+
+        [HttpGet]
+        public IActionResult GetData( string Name,string Family, string Phone, string Address)
         {
-           
+            ViewBag.Name = Name;
+            ViewBag.Family = Family;
+            ViewBag.Phone = Phone;
+            ViewBag.Address = Address;
+
+
+            return View();  
         }
+        
 
         public IActionResult Index()
         {
+
             var people = new List<Person>
             {
                 new Person("Farshad","NematPour","09167856911","Iran,Ahvaz,Padaadshahr"),
@@ -35,7 +44,6 @@ namespace PhoneBook.Controllers
                 new Person("Sadegh","moghadam","09014578850","UK,London"),
                 new Person("Dani","Niknasab","09054001412","Uk,London")
             };
-
             ViewBag.People = people;
 
 

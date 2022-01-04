@@ -9,21 +9,49 @@
     
 </div>
 
-<table class="table table-bordered bg-info">
-<tr>
-    <th>Name</th>
-    <th>Family</th>
-    <th>Phone</th>
-    <th>Address</th>
-</tr>
-    @{
-        foreach(var item in @ViewBag.people)
-        {<tr>
-            <td>@item.Name</td>
-            <td>@item.Family</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.Address</td>
-        </tr>
-        }
-    }
+<br />
+
+
+<div >
+    <form action="/Home/GetData" method="get" dir="rtl">
+    <div style="direction:rtl; text-align:right; font-family:'iran sans'">
+        <label>نام</label>
+        <input class="form-group" type="text" name="Name" placeholder="نام"  />
+
+        <label>نام خانوادگی</label>
+        <input class="form-group" type="text" name="Family" placeholder="نام خانوادگی"  />
+
+        <label>شماره تلفن</label>
+        <input class="form-group" type="text" name="Phone" placeholder="شماره تلفن"  />
+
+        <label>آدرس</label>
+        <input type="text" name="Address" placeholder="آدرس"  />
+
+        <input type="submit" value="ذخیره فرد" class="btn btn-primary" />
+    </div>
+    </form>
+
+</div>
+
+<hr />  
+
+<table class="table table-striped" style="direction:rtl; text-align:right; font-family:'iran sans'">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">نام</th>
+      <th scope="col">نام خانوادگی</th>
+      <th scope="col">شماره تلفن</th>
+      <th scope="col">آدرس</th>
+    </tr>
+      <tr>
+            @{
+                foreach(var item in @ViewBag.People)
+                {
+                    <td>@ViewBag.Name</td>
+                    <td>@ViewBag.Family</td>
+                    <td>@ViewBag.PhoneNumber</td>
+                    <td>@ViewBag.Address</td>
+                }
+            }
+      </tr>
 </table>
