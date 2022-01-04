@@ -3,14 +3,22 @@
     ViewData["Title"] = "GetData";
 }
 
-<div class:"panel panel-default">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
+<div class:"panel panel-default">
 <div  style="text-align:center;direction:rtl;">
   <div class="card-body" style="font-family:'iran sans'; direction:rtl;text-align:right">
       @{
+    <label>نام: </label>
     <p>@ViewBag.Name</p>
+
+    <label>نام خانوادگی: </label>
     <p>@ViewBag.Family</p>
+    
+    <label>شماره تلفن: </label>
     <p>@ViewBag.Phone</p>
+    
+    <label>آدرس: </label>
     <p>@ViewBag.Address</p>
       }
   </div>
