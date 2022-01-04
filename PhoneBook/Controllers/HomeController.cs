@@ -25,7 +25,6 @@ namespace PhoneBook.Controllers
            
         }
 
-
         public IActionResult Index()
         {
             var people = new List<Person>
