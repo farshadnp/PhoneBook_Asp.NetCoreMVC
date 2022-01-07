@@ -52,17 +52,26 @@ namespace PhoneBook.Controllers
                          p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm
                          select p;
 
-            var res = result;
+
+
+            var result2 = from p in person
+                          where p.Name.Contains(SearchedTerm) || p.Family.Contains(SearchedTerm) ||
+                          p.PhoneNumber.Contains(SearchedTerm) || p.Address.Contains(SearchedTerm)
+                          select p;
+
+            var res = result2;
 
             foreach (var item in res)
             {
-                ViewBag.Name          = item.Name;
-                ViewBag.Family        = item.Family;
-                ViewBag.PhoneNumber   = item.PhoneNumber;
-                ViewBag.Address       = item.Address;
+                ViewBag.Name = item.Name;
+                ViewBag.Family = item.Family;
+                ViewBag.PhoneNumber = item.PhoneNumber;
+                ViewBag.Address = item.Address;
             }
 
-            
+
+
+
             return View();
         }
 

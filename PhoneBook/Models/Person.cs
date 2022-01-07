@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 
 namespace PhoneBook.Models
 {
@@ -32,5 +31,5 @@ namespace PhoneBook.Models
     }
 
 
-   
+
 }
