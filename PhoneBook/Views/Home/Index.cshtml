@@ -12,8 +12,8 @@
 <br />
 
 
-<div >
-    <form action="/Home/GetData" method="get" dir="rtl">
+@*<div >
+    <form action="/Home/PostData" method="post" dir="rtl">
     <div style="direction:rtl; text-align:right; font-family:'iran sans'">
         <label>نام</label>
         <input class="form-group" type="text" name="Name" placeholder="نام"  />
@@ -30,28 +30,15 @@
         <input type="submit" value="ذخیره فرد" class="btn btn-primary" />
     </div>
     </form>
-
 </div>
+*@
 
-<hr />  
 
-<table class="table table-striped" style="direction:rtl; text-align:right; font-family:'iran sans'">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">نام</th>
-      <th scope="col">نام خانوادگی</th>
-      <th scope="col">شماره تلفن</th>
-      <th scope="col">آدرس</th>
-    </tr>
-      <tr>
-            @{
-                foreach(var item in @ViewBag.People)
-                {
-                    <td>@ViewBag.Name</td>
-                    <td>@ViewBag.Family</td>
-                    <td>@ViewBag.PhoneNumber</td>
-                    <td>@ViewBag.Address</td>
-                }
-            }
-      </tr>
-</table>
+<div>
+<form  asp-action="Search" asp-controller="Home" method="get">
+    <div>
+        <input name="SearchedPerson"  class="form-control" type="text" placeholder="Search"/>
+        <input type="submit" name="Search" value="Search" class="btn btn-outline-secondary" /> 
+    </div>
+</form>
+</div>

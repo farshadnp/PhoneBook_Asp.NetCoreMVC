@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PhoneBook.Models;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace PhoneBook.Controllers
 {
@@ -19,9 +16,52 @@ namespace PhoneBook.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
+        public IActionResult Search(string SearchedPerson)
+        {
+            string SearchedTerm = SearchedPerson;
+
+            var person = new List<Person>()
+            {
+                new Person(){Name="Farshad", Family="Nematpour", PhoneNumber="09167856911", Address ="Iran, Ahvaz, Paadaad"},
+                new Person(){Name="Reza", Family="Naseri", PhoneNumber="09367855001",Address = "Iran, Tehran, Jordan"},
+                new Person(){Name="Saba", Family="Karimpour", PhoneNumber="09377856001",Address = "Iran, Semnan, Karimi street"},
+                new Person(){Name="mahmood", Family="Naseri", PhoneNumber="09017804121",Address = "Germany, Berlin, street 950"},
+                new Person(){Name="Taghi", Family="salimi", PhoneNumber="09167855001",Address = "Iran, Ahvaz, Kianpars"}
+                
+            };
+
+
+            var result = from p in person
+                         where p.Name == SearchedTerm
+                         select p;
+
+            //var MyQuery = from s in person
+            //            where( s.Name==SearchedTerm || s.Family==SearchedTerm ||
+            //            s.PhoneNumber==SearchedTerm || s.Address==SearchedTerm)
+            //            select s.PhoneNumber;
+
+            var result2 = person.Where(p => p.Name == SearchedTerm || p.Family == SearchedTerm ||
+                                            p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm);
+
+            var res = result;
+
+            foreach (var item in res)
+            {
+                ViewBag.Name          = item.Name;
+                ViewBag.Family        = item.Family;
+                ViewBag.PhoneNumber   = item.PhoneNumber;
+                ViewBag.Address       = item.Address;
+            }
+
+            
+            return View();
+        }
+
+
 
         [HttpGet]
-        public IActionResult GetData( string Name,string Family, string Phone, string Address)
+        public IActionResult GetData(string Name, string Family, string Phone, string Address)
         {
             ViewBag.Name = Name;
             ViewBag.Family = Family;
@@ -29,24 +69,26 @@ namespace PhoneBook.Controllers
             ViewBag.Address = Address;
 
 
-            return View();  
+            return View();
         }
-        
+
+        [HttpPost]
+        public IActionResult PostData(string Name, string Family, string Phone, string Address)
+        {
+            Person person = new Person
+            {
+                Name = Name,
+                Family = Family,
+                PhoneNumber = Phone,
+                Address = Address
+            };
+            ViewBag.Person = person;
+
+            return View();
+        }
 
         public IActionResult Index()
         {
-
-            var people = new List<Person>
-            {
-                new Person("Farshad","NematPour","09167856911","Iran,Ahvaz,Padaadshahr"),
-                new Person("Hamid","KianPoor","09165247852","Iran,tehran,Zafaranie"),
-                new Person("Karim","Moosavi","09356001456","Germany,Berlin,Street52"),
-                new Person("Sadegh","moghadam","09014578850","UK,London"),
-                new Person("Dani","Niknasab","09054001412","Uk,London")
-            };
-            ViewBag.People = people;
-
-
             return View();
         }
 

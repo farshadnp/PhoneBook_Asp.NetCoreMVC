@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "PostData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var Data = ViewBag.Person as Person;
+}
+
+<div class:"panel panel-default">
+
+<div  style="text-align:center;direction:rtl;">
+  <div class="card-body" style="font-family:'iran sans'; direction:rtl;text-align:right">
+      @{
+    <label>نام: </label>
+    <p>@Data.Name</p>
+
+    <label>نام خانوادگی: </label>
+    <p>@Data.Family</p>
+    
+    <label>شماره تلفن: </label>
+    <p>@Data.PhoneNumber</p>
+    
+    <label>آدرس: </label>
+    <p>@Data.Address</p>
+      }
+  </div>
+</div>
+
+</div>

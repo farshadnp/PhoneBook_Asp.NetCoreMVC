@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace PhoneBook.Models
 {
@@ -9,20 +10,27 @@ namespace PhoneBook.Models
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
 
-        public Person(string f, string l)
+
+
+
+        public Person(string f, string l, string pn, string ad)
         {
-            Name = f;
-            Family = l;
+            string name = f;
+            string family = l;
+            string phone = pn;
+            string address = ad;
         }
 
-        public Person(string f, string l, string pn, string add)
+        public Person()
         {
-            Name =f;
-            Family = l;
-            PhoneNumber = pn;
-            Address = add;
         }
 
+        internal static object Where(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 
+
+   
 }
