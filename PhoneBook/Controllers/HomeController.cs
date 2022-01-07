@@ -23,26 +23,34 @@ namespace PhoneBook.Controllers
 
             var person = new List<Person>()
             {
-                new Person(){Name="Farshad", Family="Nematpour", PhoneNumber="09167856911", Address ="Iran, Ahvaz, Paadaad"},
-                new Person(){Name="Reza", Family="Naseri", PhoneNumber="09367855001",Address = "Iran, Tehran, Jordan"},
-                new Person(){Name="Saba", Family="Karimpour", PhoneNumber="09377856001",Address = "Iran, Semnan, Karimi street"},
-                new Person(){Name="mahmood", Family="Naseri", PhoneNumber="09017804121",Address = "Germany, Berlin, street 950"},
-                new Person(){Name="Taghi", Family="salimi", PhoneNumber="09167855001",Address = "Iran, Ahvaz, Kianpars"}
-                
+                new Person(){Name="پارسا", Family="نجابتی", PhoneNumber="09167856911", Address ="ایران - اهواز - کمپولو"},
+                new Person(){Name="رضا", Family="ناصری", PhoneNumber="09367855001",Address = "ایران - اهواز - کیانپارس - خیابان 13 شرقی"},
+                new Person(){Name="صادق", Family="عالی پور", PhoneNumber="09377856001",Address = "ایران - سمنان- خیابان امت - کوچه 44 - پلاک 12"},
+                new Person(){Name="کاظم", Family="ناصری", PhoneNumber="09017804121",Address = "آلمان - شهرک حفاری - ساختمان بیلدینگ"},
+                new Person(){Name="تقی", Family="salimi", PhoneNumber="09167855001",Address = "Iran, Ahvaz, Kianpars"},
+
+
+                new Person(){Name="فرشاد", Family="نعمت پور", PhoneNumber="09167855001",Address = "ایران- اهواز- یوسفی"},
+                new Person(){Name="رضا", Family="شوهانی", PhoneNumber="09167855001",Address = "برلین- محله ایرانی ها- خیابان هوشخوله"},
+                new Person(){Name="محمود", Family="فرهادی", PhoneNumber="09333785985",Address = "ایران- شیراز- چمران- کوچه شهید رضایی- پلاک 157"},
             };
 
-
-            var result = from p in person
-                         where p.Name == SearchedTerm
-                         select p;
 
             //var MyQuery = from s in person
             //            where( s.Name==SearchedTerm || s.Family==SearchedTerm ||
             //            s.PhoneNumber==SearchedTerm || s.Address==SearchedTerm)
             //            select s.PhoneNumber;
 
-            var result2 = person.Where(p => p.Name == SearchedTerm || p.Family == SearchedTerm ||
-                                            p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm);
+
+            //var result2 = person.Where(p => p.Name == SearchedTerm || p.Family == SearchedTerm ||
+            //                                p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm);
+
+
+
+            var result = from p in person
+                         where p.Name == SearchedTerm || p.Family == SearchedTerm ||
+                         p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm
+                         select p;
 
             var res = result;
 
