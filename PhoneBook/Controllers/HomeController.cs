@@ -28,8 +28,6 @@ namespace PhoneBook.Controllers
                 new Person(){Name="صادق", Family="عالی پور", PhoneNumber="09377856001",Address = "ایران - سمنان- خیابان امت - کوچه 44 - پلاک 12"},
                 new Person(){Name="کاظم", Family="ناصری", PhoneNumber="09017804121",Address = "آلمان - شهرک حفاری - ساختمان بیلدینگ"},
                 new Person(){Name="تقی", Family="salimi", PhoneNumber="09167855001",Address = "Iran, Ahvaz, Kianpars"},
-
-
                 new Person(){Name="فرشاد", Family="نعمت پور", PhoneNumber="09167855001",Address = "ایران- اهواز- یوسفی"},
                 new Person(){Name="رضا", Family="شوهانی", PhoneNumber="09167855001",Address = "برلین- محله ایرانی ها- خیابان هوشخوله"},
                 new Person(){Name="محمود", Family="فرهادی", PhoneNumber="09333785985",Address = "ایران- شیراز- چمران- کوچه شهید رضایی- پلاک 157"},
@@ -69,13 +67,8 @@ namespace PhoneBook.Controllers
                 ViewBag.Address = item.Address;
             }
 
-
-
-
             return View();
         }
-
-
 
         [HttpGet]
         public IActionResult GetData(string Name, string Family, string Phone, string Address)
