@@ -3,19 +3,22 @@
 }
 
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>    
+<div class="text-center mt-5 mb-2">
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/>
 </div>
 
 <br />
 
 
-<div style="direction:rtl; text-align:right; font-family:'IRAN Sans';">
-<form  asp-action="Search" asp-controller="Home" method="get">
-    <div >
-        <input name="SearchedPerson"  class="form-control" type="text" placeholder="جستجوی افزاد بر اساس شماره تلفن، نام، آدرس"/>
-        <input type="submit" name="Search" value="جستجو" class="form-control btn-outline-success " style="width:100%; padding-top:5px;"/> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-center" style="direction:rtl;  font-family:'IRAN Sans';">
+                <form   asp-action="Search" asp-controller="Home" method="get">
+                <input style="border-radius:20px; width:90vh;" name="SearchedPerson"  class="form-control" type="text" placeholder="جستجوی افزاد بر اساس شماره تلفن، نام، آدرس"/>
+                <input style="margin-top:20px; border-radius:20px ; width:160px" type="submit" name="Search" value="جستجو" class="form-control btn btn-info m-auto"/> 
+                </form>
+            </div>
+        </div>
     </div>
-</form>
 </div>

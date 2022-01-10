@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/Style2.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="searchs" class="search">
+        <img src="img/google.png" alt="Google logo">
+        <br>
+        <br>
+        <form asp-action="Search" asp-controller="Home" method="get">
+            <input id="searchbar1" class="search-bar-1" type="search">
+            <br>
+            <br>
+        </form>
+        <input onclick="sum()" class="search-btn" type="submit" value="Google Search">
+    </div>
+    <header id="head" class=" d-flex d-none ">
+        <div class="tops d-flex ">
+            <img class="second" src="img/google.png" alt="Google" title="Google">
+            <form action="" class="mx-3">
+                <input id="searchbar2" class="search-bar" type="search">
+            </form>
+        </div>
+    </header>
+    <div id="con" class="content d-none">
+        <ul class="main-result">
+            <li class="main-li-1">
+                <ul>
+                    <li class="title"><a href="#" class="link">sadegh alipoor</a></li>
+                    <li class="description">this is the one and only hello world in the world Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente quod voluptatem illum. Labore repellendus sed quaerat eveniet laudantium iure? Fugit dolorem quas explicabo. Explicabo,
+                        alias ipsam! Enim, commodi velit laborum, voluptatibus a rerum consectetur nostrum non molestias totam consequuntur laboriosam dolorum porro minima accusamus saepe? Minima necessitatibus ducimus ratione impedit!</li>
+                </ul>
+            </li>
+            <li class="main-li-1">
+                <ul>
+                    <li class="title"><a href="#" class="link">sadegh alipoor</a></li>
+                    <li class="description">this is the one and only hello world in the world Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore qui minima itaque error blanditiis laudantium architecto distinctio facilis vel provident! Neque libero asperiores
+                        eos doloribus porro fugit cupiditate modi sit aliquam, delectus animi laudantium beatae alias ratione dolore labore, cumque repellendus ab nisi molestiae ea provident a ex. Delectus cum pariatur maxime vitae numquam sed harum libero.
+                        Facere, placeat laborum.</li>
+                </ul>
+            </li>
+            <li class="main-li-1">
+                <ul>
+                    <li class="title"><a href="#" class="link">farshad nematpoor</a></li>
+                    <li class="description">this is the one and only hello world in the world Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus veritatis cupiditate consequatur ipsum voluptatum repellendus harum repudiandae, sequi repellat explicabo recusandae
+                        doloribus sunt. Accusantium, ipsum fuga nam sequi nesciunt aspernatur.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <p id="h"></p>
+</body>
+<script src="javascript/main.js">
+</script>
+
+</html>

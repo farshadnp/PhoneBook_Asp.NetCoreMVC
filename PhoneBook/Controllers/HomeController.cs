@@ -31,6 +31,12 @@ namespace PhoneBook.Controllers
                 new Person(){Name="فرشاد", Family="نعمت پور", PhoneNumber="09167855001",Address = "ایران- اهواز- یوسفی"},
                 new Person(){Name="رضا", Family="شوهانی", PhoneNumber="09167855001",Address = "برلین- محله ایرانی ها- خیابان هوشخوله"},
                 new Person(){Name="محمود", Family="فرهادی", PhoneNumber="09333785985",Address = "ایران- شیراز- چمران- کوچه شهید رضایی- پلاک 157"},
+
+                new Person(){Name="فرشاد", Family="سعیدی", PhoneNumber="09333986500",Address = "ایران- تهران- اندیشه، فاز4"},
+                new Person(){Name="فرشاد", Family="نصیری", PhoneNumber="091680052651",Address = "ایران- کرج- شادی"},
+
+
+
             };
 
 
@@ -43,19 +49,10 @@ namespace PhoneBook.Controllers
             //var result2 = person.Where(p => p.Name == SearchedTerm || p.Family == SearchedTerm ||
             //                                p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm);
 
-
-
-            var result = from p in person
-                         where p.Name == SearchedTerm || p.Family == SearchedTerm ||
-                         p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm
-                         select p;
-
-
-
-            var result2 = from p in person
+            var result2 = (from p in person
                           where p.Name.Contains(SearchedTerm) || p.Family.Contains(SearchedTerm) ||
                           p.PhoneNumber.Contains(SearchedTerm) || p.Address.Contains(SearchedTerm)
-                          select p;
+                          select p).ToList();
 
             var res = result2;
 
@@ -67,7 +64,7 @@ namespace PhoneBook.Controllers
                 ViewBag.Address = item.Address;
             }
 
-            return View();
+            return View(res);
         }
 
         [HttpGet]

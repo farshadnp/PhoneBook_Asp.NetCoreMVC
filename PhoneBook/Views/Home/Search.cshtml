@@ -1,14 +1,27 @@
-﻿@{
+﻿@model List<Person> 
+
+@{
     ViewData["Title"] = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div style="direction:rtl; text-align:center">
-    
-<ul class="list-group">
-  <li class="list-group-item active">@ViewBag.Name</li>
-  <li class="list-group-item">@ViewBag.Family</li>
-  <li class="list-group-item">@ViewBag.PhoneNumber</li>
-  <li class="list-group-item">@ViewBag.Address</li>
-</ul>
+<div class="row">
+@{
+    foreach(var item in Model)
+    {   
+
+            <div class="col-md-4 mb-3 ">
+                <ul class="list-group">
+                    <li class="list-group-item">@item.Name</li>
+                    <li class="list-group-item">@item.Family</li>
+                    <li class="list-group-item">@item.PhoneNumber</li>
+                    <li class="list-group-item">@item.Address</li>
+                </ul>
+            </div>
+
+    }
+}
+</div>
 </div>

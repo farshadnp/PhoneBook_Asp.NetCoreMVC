@@ -1,0 +1,50 @@
+@font-face {
+    font-family: iransans;
+    src: url(Fonts/IRANSansWeb.woff);
+}
+
+* {
+    font-family: iransans;
+}
+
+body {
+    font-family: iransans;
+    font-size: 15px;
+    background-image: url(../Img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: #525252;
+}
+
+.search {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 200px;
+}
+
+.search-bar {
+    height: 70px;
+    width: 600px;
+    border: 1px solid #c6c6c6;
+    border-radius: 50px;
+    font-size: 30px;
+    padding: 30px;
+    outline: none;
+    transition: box-shadow 0.3 ease;
+}
+
+.search-btn {
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: royalblue;
+    color: white;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
