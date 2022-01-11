@@ -48,23 +48,32 @@ namespace PhoneBook.Controllers
 
             //var result2 = person.Where(p => p.Name == SearchedTerm || p.Family == SearchedTerm ||
             //                                p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm);
+            if (SearchedTerm != null)
+            {
 
             var result2 = (from p in person
                           where p.Name.Contains(SearchedTerm) || p.Family.Contains(SearchedTerm) ||
                           p.PhoneNumber.Contains(SearchedTerm) || p.Address.Contains(SearchedTerm)
                           select p).ToList();
 
-            var res = result2;
 
-            foreach (var item in res)
-            {
-                ViewBag.Name = item.Name;
-                ViewBag.Family = item.Family;
-                ViewBag.PhoneNumber = item.PhoneNumber;
-                ViewBag.Address = item.Address;
+                var res = result2;
+
+                foreach (var item in res)
+                {
+                    ViewBag.Name = item.Name;
+                    ViewBag.Family = item.Family;
+                    ViewBag.PhoneNumber = item.PhoneNumber;
+                    ViewBag.Address = item.Address;
+                }
+
+                return View(res);
+
             }
-
-            return View(res);
+            else
+            {
+                return RedirectToAction("index");
+            }
         }
 
         [HttpGet]
