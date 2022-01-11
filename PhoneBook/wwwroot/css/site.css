@@ -1,6 +1,11 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+h1, h2, h3, h4, h5, h6, p, a, li {
+    cursor:default
+}
+
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -81,6 +86,29 @@ body {
     text-align:start;
 }
 
-.namefam {
+.name {
     margin-right:-40px
+}
+
+.header {
+    height: 100px;
+    border-bottom: 2px solid #EFEFEF;
+    width: 100%;
+}
+
+.search-page-logo {
+    height:55px !important;
+    width:145px;
+    margin:20px 0px;
+
+}
+
+.search-page-bar {
+    height: 35px;
+    margin: 25px;
+    border-radius: 20px;
+    direction: ltr;
+    padding: 20px;
+    outline: none;
+    border: 2px solid #EFEFEF
 }
