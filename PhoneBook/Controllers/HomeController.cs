@@ -40,14 +40,6 @@ namespace PhoneBook.Controllers
             };
 
 
-            //var MyQuery = from s in person
-            //            where( s.Name==SearchedTerm || s.Family==SearchedTerm ||
-            //            s.PhoneNumber==SearchedTerm || s.Address==SearchedTerm)
-            //            select s.PhoneNumber;
-
-
-            //var result2 = person.Where(p => p.Name == SearchedTerm || p.Family == SearchedTerm ||
-            //                                p.PhoneNumber == SearchedTerm || p.Address == SearchedTerm);
             if (SearchedTerm != null)
             {
 
