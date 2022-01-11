@@ -6,18 +6,22 @@
 }
 
 
-<div style="direction:rtl; text-align:center">
+<div dir="rtl" >
 <div class="row">
 @{
     foreach(var item in Model)
     {   
 
-            <div class="col-md-4 mb-3 ">
-                <ul class="list-group">
-                    <li class="list-group-item">@item.Name</li>
-                    <li class="list-group-item">@item.Family</li>
-                    <li class="list-group-item">@item.PhoneNumber</li>
-                    <li class="list-group-item">@item.Address</li>
+            <div class="col-md-10 ">
+                <ul class=" list-unstyled">
+                    <li>
+                    <ul class="d-flex list-unstyled">
+                    <li class="namefam text-primary"><h4>@item.Family</h4></li>
+                    <li class=" text-primary"><h4>@item.Name</h4></li>
+                    </ul>
+                    </li>
+                    <li  class="align">@item.PhoneNumber</li>
+                    <li  class="align">@item.Address</li>
                 </ul>
             </div>
 

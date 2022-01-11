@@ -76,3 +76,11 @@ body {
     padding: 5px 35px;
     background-color: #EFEFEF
 }
+
+.align {
+    text-align:start;
+}
+
+.namefam {
+    margin-right:-40px
+}
