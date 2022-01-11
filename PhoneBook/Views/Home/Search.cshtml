@@ -8,7 +8,9 @@
 <div dir="rtl" >
     <div class="header">
       <div class="d-flex justify-content-end" >
-          <input type="text" placeholder="search" class="search-page-bar" />
+          <form asp-action="Search" asp-controller="Home" method="get">
+            <input  Name="SearchedPerson" type="text" placeholder="search" class="search-page-bar" />
+          </form>
           <a asp-action="index"> <img class="search-page-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="google logo"/></a>
       </div>
     </div>
