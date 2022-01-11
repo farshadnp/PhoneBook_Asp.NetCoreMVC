@@ -97,18 +97,32 @@ body {
 }
 
 .search-page-logo {
-    height:55px !important;
-    width:145px;
-    margin:20px 0px;
+    height:40px;
+    width:120px;
+    margin:30px 0px;
 
 }
 
 .search-page-bar {
     height: 35px;
+    width: 500px;
     margin: 25px;
     border-radius: 20px;
     direction: ltr;
     padding: 20px;
     outline: none;
-    border: 2px solid #EFEFEF
+    border: 2px solid #EFEFEF;
+    transition: background-color .2s ease-in, border .4s ease, box-shadow .3s ease-out;
+    box-shadow: 5px 1px 8px #E7E7E7;
 }
+
+
+    .search-page-bar:hover {
+        background-color:#EFEFEF;
+        border: 2px solid transparent;
+    }
+
+    .search-page-bar:focus {
+        box-shadow: none;
+        background-color: #EFEFEF;
+    }
