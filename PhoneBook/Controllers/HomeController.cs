@@ -75,33 +75,6 @@ namespace PhoneBook.Controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult GetData(string Name, string Family, string Phone, string Address)
-        {
-            ViewBag.Name = Name;
-            ViewBag.Family = Family;
-            ViewBag.Phone = Phone;
-            ViewBag.Address = Address;
-
-
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult PostData(string Name, string Family, string Phone, string Address)
-        {
-            Person person = new Person
-            {
-                Name = Name,
-                Family = Family,
-                PhoneNumber = Phone,
-                Address = Address
-            };
-            ViewBag.Person = person;
-
-            return View();
-        }
-
         public IActionResult Index()
         {
             return View();
