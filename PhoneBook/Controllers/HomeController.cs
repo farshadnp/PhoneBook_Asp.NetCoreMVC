@@ -21,6 +21,9 @@ namespace PhoneBook.Controllers
         {
             string SearchedTerm = SearchedPerson;
 
+            // substring multy value that seperated by ,
+            string[] st = SearchedTerm.Split("+");
+
             var person = new List<Person>()
             {
                 new Person(){Name="پارسا", Family="نجابتی", PhoneNumber="09167856911", Address ="ایران - اهواز - کمپولو"},
@@ -31,14 +34,20 @@ namespace PhoneBook.Controllers
                 new Person(){Name="فرشاد", Family="نعمت پور", PhoneNumber="09167855001",Address = "ایران- اهواز- یوسفی"},
                 new Person(){Name="رضا", Family="شوهانی", PhoneNumber="09167855001",Address = "برلین- محله ایرانی ها- خیابان هوشخوله"},
                 new Person(){Name="محمود", Family="فرهادی", PhoneNumber="09333785985",Address = "ایران- شیراز- چمران- کوچه شهید رضایی- پلاک 157"},
-
                 new Person(){Name="فرشاد", Family="سعیدی", PhoneNumber="09333986500",Address = "ایران- تهران- اندیشه، فاز4"},
                 new Person(){Name="فرشاد", Family="نصیری", PhoneNumber="091680052651",Address = "ایران- کرج- شادی"},
-
-
-
             };
 
+
+
+            var resultOfMultyTerm = (from p in person
+                                     where 
+                                     ( p.Name.Contains(st[0]) && 
+                                       p.Family.Contains(st[0]) && 
+                                       p.PhoneNumber.Contains(st[0])
+                                     )
+                                     select p.Name
+                                     );
 
             if (SearchedTerm != null)
             {
@@ -47,8 +56,6 @@ namespace PhoneBook.Controllers
                           where p.Name.Contains(SearchedTerm) || p.Family.Contains(SearchedTerm) ||
                           p.PhoneNumber.Contains(SearchedTerm) || p.Address.Contains(SearchedTerm)
                           select p).ToList();
-
-
                 var res = result2;
 
                 foreach (var item in res)
@@ -60,8 +67,8 @@ namespace PhoneBook.Controllers
                 }
 
                 return View(res);
-
             }
+
             else
             {
                 return RedirectToAction("index");
