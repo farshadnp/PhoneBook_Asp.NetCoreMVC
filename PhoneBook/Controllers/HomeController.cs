@@ -40,14 +40,14 @@ namespace PhoneBook.Controllers
 
 
 
-            var resultOfMultyTerm = (from p in person
-                                     where 
-                                     ( p.Name.Contains(st[0]) && 
-                                       p.Family.Contains(st[0]) && 
-                                       p.PhoneNumber.Contains(st[0])
-                                     )
-                                     select p.Name
-                                     );
+            //var resultOfMultyTerm = (from p in person
+            //                         where 
+            //                         ( p.Name.Contains(st[0]) && 
+            //                           p.Family.Contains(st[0]) && 
+            //                           p.PhoneNumber.Contains(st[0])
+            //                         )
+            //                         select p.Name
+            //                         );
 
             if (SearchedTerm != null)
             {
