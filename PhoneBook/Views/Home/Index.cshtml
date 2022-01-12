@@ -1,8 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_searchLayout.cshtml"; 
 }
 
-
+@*
         <br />
         <br />
         <br />
@@ -24,7 +25,26 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
+
+    <header></header>
+    <div class="main-content d-flex justify-content-center">
+        <div class="content">
+            <div class="logo">
+                <a href="#"><img src="img/Pmonum-logo.png" alt="Pmo-Logo"></a>
+            </div>
+            <form asp-action="Search" asp-controller="Home" method="get">
+                <div class=" input-icons">
+                <a href=""><i class="fa fa-search icon"></i></a>
+                <input class="input-field" type="text" name="SearchedPerson" id="search-bar" placeholder="جستجو">
+            </div>
+            <div class="btn-container mt-3">
+                <button name="Search">جستجو</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <footer></footer>
 
 
