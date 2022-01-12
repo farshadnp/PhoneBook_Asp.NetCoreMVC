@@ -22,7 +22,7 @@ namespace PhoneBook.Controllers
             string SearchedTerm = SearchedPerson;
 
             // substring multy value that seperated by ,
-            string[] st = SearchedTerm.Split("+");
+            //string[] st = SearchedTerm.Split("+");
 
             var person = new List<Person>()
             {
